@@ -1,12 +1,30 @@
+import React, { useState } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import {Link, useNavigate} from 'react-router-dom'
 import axios from "axios";
 
 
 const LoginPage = () => {
+    const [loadings, setLoadings] = useState([]);
+    const enterLoading = (index) => {
+        setLoadings((prevLoadings) => {
+            const newLoadings = [...prevLoadings];
+            newLoadings[index] = true;
+            return newLoadings;
+        });
+        setTimeout(() => {
+            setLoadings((prevLoadings) => {
+                const newLoadings = [...prevLoadings];
+                newLoadings[index] = false;
+                return newLoadings;
+            });
+        }, 2000);
+    };
+
     const navigate = useNavigate()
     const onFinish = async (values) => {
+        enterLoading(1)
         const logUser = {
             email: values.username,
             password: values.password
@@ -18,7 +36,6 @@ const LoginPage = () => {
                 navigate('/todo')
             })
             .catch(data => alert(data.response.data.message))
-
     };
     return (
 
@@ -65,7 +82,11 @@ const LoginPage = () => {
                 />
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit" className="login-form-button">
+                <Button type="primary"
+                        loading={loadings[1]}
+                        htmlType="submit"
+                        className="login-form-button"
+                >
                     Log in
                 </Button>
                 Or <Link to="register">register now!</Link>

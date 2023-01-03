@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 import {
     Button,
@@ -46,9 +46,26 @@ const tailFormItemLayout = {
 };
 
 const RegistrationPage = () => {
+    const [loadings, setLoadings] = useState([]);
+    const enterLoading = (index) => {
+        setLoadings((prevLoadings) => {
+            const newLoadings = [...prevLoadings];
+            newLoadings[index] = true;
+            return newLoadings;
+        });
+        setTimeout(() => {
+            setLoadings((prevLoadings) => {
+                const newLoadings = [...prevLoadings];
+                newLoadings[index] = false;
+                return newLoadings;
+            });
+        }, 2000);
+    };
+
     const navigate = useNavigate()
     const [form] = Form.useForm();
     const onFinish = async (values) => {
+        enterLoading(1)
         const regUser = {
             name: values.name,
             username: values.username,
@@ -180,7 +197,10 @@ const RegistrationPage = () => {
                 <InputNumber />
             </Form.Item>
             <Form.Item {...tailFormItemLayout}>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary"
+                        htmlType="submit"
+                        loading={loadings[1]}
+                >
                     Register
                 </Button>
                 <Link to='/'><Button type="link">Back</Button></Link>

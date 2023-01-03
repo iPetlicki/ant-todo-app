@@ -5,8 +5,6 @@ import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
 import TodoPage from "./Pages/todoPage/todoPage";
 import PrivateRoute from "./Helpers/PrivateRoute";
 
-
-
 function App() {
   return (
     <div className="App">
