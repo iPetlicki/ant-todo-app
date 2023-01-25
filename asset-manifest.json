@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ant-todo-app/static/css/main.073c9b0a.css",
-    "main.js": "/ant-todo-app/static/js/main.cbbd1535.js",
+    "main.js": "/ant-todo-app/static/js/main.21e58843.js",
     "static/js/787.6eca0df7.chunk.js": "/ant-todo-app/static/js/787.6eca0df7.chunk.js",
     "index.html": "/ant-todo-app/index.html",
     "main.073c9b0a.css.map": "/ant-todo-app/static/css/main.073c9b0a.css.map",
-    "main.cbbd1535.js.map": "/ant-todo-app/static/js/main.cbbd1535.js.map",
+    "main.21e58843.js.map": "/ant-todo-app/static/js/main.21e58843.js.map",
     "787.6eca0df7.chunk.js.map": "/ant-todo-app/static/js/787.6eca0df7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.cbbd1535.js"
+    "static/js/main.21e58843.js"
   ]
 }
