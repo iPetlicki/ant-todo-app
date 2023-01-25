@@ -2,7 +2,7 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
-import TodoPage from "./Pages/todoPage/todoPage";
+import TodoPage from "./Pages/TodoPage/TodoPage";
 import PrivateRoute from "./Helpers/PrivateRoute";
 
 function App() {

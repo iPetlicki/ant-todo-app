@@ -10,9 +10,6 @@ import {
 import axios from "axios";
 
 
-
-
-
 const { Option } = Select;
 const formItemLayout = {
     labelCol: {

@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
+import {useDispatch} from "react-redux";
 import { Input, Button, Row, Col } from 'antd';
+import {addTask} from "../Redux/Actions";
 
-const CustomInput = ({addTask}) => {
+const CustomInput = () => {
     const [text, setText] = useState('')
+    const dispatch = useDispatch()
+    const handleAdd = (text) => {
+        dispatch(addTask(text))
+    }
+
     const handleClick = () => {
-        addTask(text)
+        handleAdd(text)
         setText('')
     }
 
