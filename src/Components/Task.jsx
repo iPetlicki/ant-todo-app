@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
-import {deleteTask, completeTask, changingStatus} from "../Redux/Actions";
+import {deleteTask, completeTask, changingStatus} from '../Redux/TodoSlicer'
 import {Input, Row, Col, List, Checkbox } from 'antd';
 import {DeleteOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
 
@@ -14,7 +14,7 @@ const Task = ({item}) => {
         dispatch(completeTask(item.id))
     }
     const editTask = (item ,text) => {
-        dispatch(changingStatus(item.id, editText))
+        dispatch(changingStatus({id:item.id, editText}))
     }
 
     const actions = [<DeleteOutlined onClick={() => removeTask(item)} /> ]

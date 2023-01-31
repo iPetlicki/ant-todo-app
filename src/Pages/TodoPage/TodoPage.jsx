@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {List, Row, Col} from "antd";
 
 const TodoPage = () => {
-    const items = useSelector((state => state.tasks))
+    const items = useSelector((state => state.todo))
     return (
         <>
             <h1>Create your tasks</h1>

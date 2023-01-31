@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import { Input, Button, Row, Col } from 'antd';
-import {addTask} from "../Redux/Actions";
+import {addTask} from '../Redux/TodoSlicer'
 
 const CustomInput = () => {
     const [text, setText] = useState('')

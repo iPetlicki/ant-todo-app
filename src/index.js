@@ -5,10 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from "react-router-dom";
 import {Provider} from 'react-redux'
-import {createStore} from 'redux'
-import {rootReducer} from './Redux/RootReducer'
-
-const store = createStore(rootReducer)
+import {store} from "./Redux/Store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
