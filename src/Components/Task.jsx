@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
-import {deleteTask, completeTask, changingStatus} from '../Redux/TodoSlicer'
+import {deleteTask, completeTask, changingStatus} from '../Store/TodoSlicer'
 import {Input, Row, Col, List, Checkbox } from 'antd';
 import {DeleteOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
 

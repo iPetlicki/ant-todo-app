@@ -29,7 +29,6 @@ const todoSlice = createSlice({
         },
 
         changingStatus: (state, action) => {
-            console.log(action)
             if (action.payload.editText !== '') {
                 return state.map(item => item.id === action.payload.id ? {...item, isChanged: !item.isChanged, title: action.payload.editText} : item)
             } else {
