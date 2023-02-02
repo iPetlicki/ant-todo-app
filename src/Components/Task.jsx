@@ -14,15 +14,15 @@ const Task = ({item}) => {
         dispatch(completeTask(item.id))
     }
     const editTask = (item ,text) => {
-        dispatch(changingStatus({id:item.id, editText}))
+        dispatch(changingStatus({id:item.id, editText: text}))
     }
 
     const actions = [<DeleteOutlined onClick={() => removeTask(item)} /> ]
 
     if (item.isChanged) {
-        actions.push(<SaveOutlined onClick={() => editTask(item)} />)
+        actions.push(<SaveOutlined onClick={() => editTask(item, editText)} />)
     } else {
-        actions.push(<EditOutlined onClick={() => editTask(item)} /> )
+        actions.push(<EditOutlined onClick={() => editTask(item, editText)} /> )
     }
 
     return (
